@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" style="min-width:470px; max-width: 470px; max-height: 350px !important">
+
+<head>
+    <title>JustDoIT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="dropDatum.css">
+
+<!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>-->
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script>-->
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		  </button>
+		  <a class="navbar-brand" href="#">JustDoIT.com</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li class="dropdown active">
+			  <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Categories<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li id="activeG"><a href="#"><span class="glyphicon glyphicon-list-alt" ></span> General<span id="generalCounter" class="badge badge_style">0</span></a></li>
+				<li id="activeP"><a href="#"><span class="glyphicon glyphicon-user"></span> Private<span id="privateCounter" class="badge badge_style">0</span></a></li>
+				<li id="activeW"><a href="#"><span class="glyphicon glyphicon-briefcase"></span> Work<span id="workCounter" class="badge badge_style">0</span></a></li>
+				<li id="activeS"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping<span id="shoppingCounter" class="badge badge_style">0</span></a></li>
+				<li id="activeC"><a href="#"><span class="glyphicon glyphicon-ok"></span> Done<span id="doneCounter" class="badge badge_style">0</span></a></li>
+				<li id="activeA"><a href="#"><i class="fa fa-archive" aria-hidden="true"></i> Archive<span id="archiveCounter" class="badge badge_style">0</span></a></li>
+                <li id="activeO"><a href="#"><span class="glyphicon glyphicon-alert"></span> Overdue<span id="overdueCounter" class="badge badge_style_overdue">0</span></a></li>
+			  </ul>
+			</li>
+				<li id="print" class="text_opacity"><a href="#"><span class="glyphicon glyphicon-print"></span><span class="opacity"> Print All</span></a></li>
+				<li id="archive" class="text_opacity"><a href="#"><span class="glyphicon glyphicon-trash"></span><span class="opacity"> Clear Archive</span></a></li>	
+			</ul> 
+		</div>
+ 		<ul class="nav navbar-nav navbar-right">
+			<button type="button" class="btn btn-info btn-sm button_add" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus">
+			</span><span class="text"> </span></button>
+			<button id="todayRender" type="button" class="btn btn-info btn-sm button_today" data-toggle="modal" 
+         >Today <span id="todayCounter" class="badge badge-style">0 </span></button>
+		</ul>
+	  </div>
+	 
+	</nav>
+	
+	<div class="container-fluid background">
+		<div class="display">
+			<ul id="lista" class="list-unstyled" >
+<!--			<li class="task_display">
+				<p class="checkboxFive">
+					<input type="checkbox" value="1" id="checkboxFiveInput">
+					<label for="checkboxFiveInput"></label>
+				</p>
+				<p class="title_display">Opa opa</p>
+				<p class="datum_display">25/04/88</p>
+				<p title="10:04 AM" class="datum_display"><span class="glyphicon glyphicon-time"></span></p>
+				  <button type="button" value = "&times;" class="close">   
+				  <span>&times;</span>			
+				  </button>
+				  <button type="button" class="btn btn-warning btn-xs btn_position">Edit</button>
+				</li>-->
+            </ul>
+		</div>
+	</div>
+	
+	<!-- Modal -->
+<div class="container">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+		<form class="form-horizontal" role="form" name="tasks">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Add a new task</h4>
+		  </div>
+		  <div class="modal-body row">
+			<!--<form>-->
+			  	<div class="form-group" style="margin-left: 10%; margin-right: 10%">
+					<input type="text" id="input" name="input" placeholder="Enter your task here" class="form-control" required>
+				<div id = "required_title" class="alert alert-warning" style="display: none">
+				  Your task should be 2 to 52 characters long.
+				</div></div><br>
+				<div class="form-group pull-left" style="margin-left: 10%">
+					<label for="dueDate"><span class="glyphicon glyphicon-calendar icon_style"></span> Due Date:</label>
+					<input type="text" id="inputDate" name="inputDate" class="form-control">
+				</div>
+			    <div class="form-group pull-right" style="margin-right: 10%">
+					<label for="dueTime"><span class="glyphicon glyphicon-time icon_style"></span> Due Time:</label><br>
+					<input type="time" id="inputTime" name="inputTime" style="width:120px" class="form-control">
+				</div><br>
+			  	<div class="form-group" style="margin-right: 10%; margin-left: 10%">
+					<label for="category">Choose a category:</label>
+						  <select class="form-control" id="category" name="category">
+							<option value="0">General</option>
+							<option value="1">Private</option>
+							<option value="2">Work</option>
+							<option value="3">Shopping</option>
+						  </select>
+				</div><br>
+		  </div>
+		  <div class="modal-footer">
+			<button id="addButton" type="button" class="btn btn-info" value="submit" style="float: right; margin-right: 7%">Add</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal" style="margin-right: 2%">Close</button>
+		  </div>
+		</div>
+	   </form>
+	</div>
+  </div>
+</div>
+	
+<!--modal notifikacija-->
+        
+	   <div  class="modal fade" id="modalNot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form action="" method="post">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title text-center" id="myModalLabel"></h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post">
+						<div class="form-group">
+						<ul id="ulToday"></ul>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<!--<button type="submit" name="OK" id="OK" class="btn btn-primary">Ok</button>-->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+    
+<div class="modal fade" id="editModal" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-body">
+        <input type="text" id="izmjeniText">
+    </div>
+    <div class="modal-footer">
+        <button id="editButton" class="btn btn-info pull-right" onclick="taskModificator(idZaIzmjenu,{title:izmjeniText.value});renderTasks({category:kategorijaZaIzmjenu});$('#editModal').modal('hide')">Save</button>
+    </div>
+    </div>
+    </div>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="jquery-3.2.1.js"></script>
+<script src="jquery-ui.js"></script>
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<script src="bootstrap.min.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "name":"To Do List",
+    "description":"Manage your tasks easily",
+    "version":"1.0",
+    "manifest_version":2,
+	"content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "content_scripts": [
+    {
+      "matches": ["http://www.google.com/*"],
+      "css" : ["style.css", "dropDatum.css"],
+      "js": ["popup.js", "jquery-3.2.1.js"]
+    }
+    ],
+	
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+    
+    "browser_action": {	
+    "default_popup":"popup.html"
+},	
+
+"permissions":[
+    "tabs",
+    "storage",
+    "activeTab"
+]
+}

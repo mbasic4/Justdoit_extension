@@ -1,0 +1,270 @@
+.opacity {
+	opacity: 0
+}
+
+
+.text_opacity:hover .opacity {
+	opacity: 1;
+}
+
+.button_add {
+	position: absolute;
+	top: 0.87em;
+	right: 35%; 	
+}
+
+
+.button_today {
+	position: absolute;
+	top: 0.88em;
+	right: 14%;
+	background-color: transparent !important;
+	outline: none !important;
+	border: none;
+}
+
+
+.badge_style_overdue {
+	float: right;
+	outline: none !important;
+	background: white;
+	color: red
+}
+.badge_style {
+	float: right;
+	outline: none !important;
+	background: white;
+	color: darkturquoise;
+}
+
+
+.background {
+	background-image: url("blue.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 40em;
+	/*opacity: 0.6;*/
+}
+
+.navbar-inverse {
+	margin-bottom: 3.5px;
+	border-radius: 0;
+}
+
+.modal-title {
+	text-align: center;
+}
+
+#input {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+#inputDate {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+	width: 90%;
+}
+
+#category {
+	width: 100%;
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+.datepicker {
+  z-index: 1600 !important; /* has to be larger than 1050 */
+}
+
+#lista div{
+position:relative;
+margin-top: 15px;
+min-height: 20px;
+width: 80%;
+}
+
+/*#lista div .opisi {
+position: relative;
+font-size: 15px;
+width: 60%;
+height: 21.8px;
+margin-left: 65px; 
+}
+
+.inputDatumi {
+    border: none;
+    font-size: 13px;
+    width: 80px;
+    position: absolute;
+	height:19.8px;	
+	top:1px;
+}
+
+#lista div input[type=checkbox] {
+	float:left;
+    position: absolute;
+    left:41px;
+	bottom: 0.01%;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+}
+
+.iksic {
+    position: fixed;
+    right: 15%;
+    background-color: darkslategrey;
+	color: white;
+    border: none;
+    height: 3.5%;
+    width: 22px;
+    font-size: 20px;
+	padding-bottom: 3px;
+	text-align: center;
+}*/
+    	
+
+.checkbox {
+    width: 14px;
+    position: relative;
+    top: 2px;
+    height: 14px;
+    display: inline-block;
+}
+
+
+
+.badge[data-badge]:after {
+        content:attr(data-badge);
+}
+
+
+/*checkbox for added tasks*/
+.checkboxFive {
+	width: 18px;
+	/*margin: 20px 100px;*/
+	position: relative;
+	display: inline-block;
+}
+
+.checkboxFive label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 16px;
+	bottom: -3.9px;
+  	left: 0;
+	background: white;
+	border: 1px solid darkslategrey;
+	border-radius: 5px;
+	padding-top: 5px
+}
+
+.checkboxFive label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 2px solid darkslategrey;
+	border-top: none;
+	border-right: none;
+
+	transform: rotate(-45deg);
+}
+
+.checkboxFive label:hover::after {
+	opacity: 0.5;
+}
+
+.checkboxFive input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+
+.title_display {
+	display: inline-block;
+	color: darkslategrey;
+	font-size: 12px;
+	width: 300px;
+	max-width: 270px;
+	padding-left: 2px;
+}
+
+.view_task {
+	height: 25px;
+	background: white;
+	padding-left: 3px;
+	border-radius: 5px;
+	margin-bottom: 8px;
+	width: 435px;
+	max-width: 435px;
+}
+
+
+
+.datum_display {
+	display: inline-block;
+	color: darkslategrey;
+	font-size: 12px;
+	width: 65px;
+	/*padding-right: 3px;*/
+}
+
+.time_display {
+	display: inline-block;
+	color: darkslategrey;
+	font-size: 12px;
+	width: 15px;
+	/*padding-right: 3px;*/
+}
+
+
+.close {
+	margin-right: 7px;
+	position: relative;
+	top: 2px;
+	display: inline-block;
+}
+
+.btn_position {
+	position: relative;
+	bottom: 1px;
+	left: 10px;
+	width: 35px;
+	display: inline-block;
+}
+
+.btn_position:hover {
+	bottom: 0.1em;
+}
+
+#inputTime {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+.p_time {
+	border: 2px solid darkslategrey;
+	background: white;
+	height: 25px;
+	width: 200px;
+}
+
+.display {
+	margin-top: 40px;
+}
+
+.list-unstyled {
+	margin-bottom: 50px;
+}
+
+.input_style {
+	width: 80%;
+}
