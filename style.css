@@ -85,48 +85,8 @@ margin-top: 15px;
 min-height: 20px;
 width: 80%;
 }
-
-/*#lista div .opisi {
-position: relative;
-font-size: 15px;
-width: 60%;
-height: 21.8px;
-margin-left: 65px; 
-}
-
-.inputDatumi {
-    border: none;
-    font-size: 13px;
-    width: 80px;
-    position: absolute;
-	height:19.8px;	
-	top:1px;
-}
-
-#lista div input[type=checkbox] {
-	float:left;
-    position: absolute;
-    left:41px;
-	bottom: 0.01%;
-    height: 100%;
-    width: 30px;
-    cursor: pointer;
-}
-
-.iksic {
-    position: fixed;
-    right: 15%;
-    background-color: darkslategrey;
-	color: white;
-    border: none;
-    height: 3.5%;
-    width: 22px;
-    font-size: 20px;
-	padding-bottom: 3px;
-	text-align: center;
-}*/
     	
-
+/*checkbox for added tasks*/
 .checkbox {
     width: 14px;
     position: relative;
@@ -136,55 +96,8 @@ margin-left: 65px;
 }
 
 
-
 .badge[data-badge]:after {
         content:attr(data-badge);
-}
-
-
-/*checkbox for added tasks*/
-.checkboxFive {
-	width: 18px;
-	/*margin: 20px 100px;*/
-	position: relative;
-	display: inline-block;
-}
-
-.checkboxFive label {
-	cursor: pointer;
-	position: absolute;
-	width: 25px;
-	height: 16px;
-	bottom: -3.9px;
-  	left: 0;
-	background: white;
-	border: 1px solid darkslategrey;
-	border-radius: 5px;
-	padding-top: 5px
-}
-
-.checkboxFive label:after {
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 9px;
-	height: 5px;
-	background: transparent;
-	top: 4px;
-	left: 4px;
-	border: 2px solid darkslategrey;
-	border-top: none;
-	border-right: none;
-
-	transform: rotate(-45deg);
-}
-
-.checkboxFive label:hover::after {
-	opacity: 0.5;
-}
-
-.checkboxFive input[type=checkbox]:checked + label:after {
-	opacity: 1;
 }
 
 .title_display {
@@ -250,13 +163,6 @@ margin-left: 65px;
 	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
 }
 
-.p_time {
-	border: 2px solid darkslategrey;
-	background: white;
-	height: 25px;
-	width: 200px;
-}
-
 .display {
 	margin-top: 40px;
 }
@@ -267,4 +173,32 @@ margin-left: 65px;
 
 .input_style {
 	width: 80%;
+}
+
+#izmijeniText {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+#editDate {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+#editTime {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+.navbar-brand {
+	color: white!important;
+}
+
+#editCategory {
+	border: 1px solid;
+	border-color: darkslategrey;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.4);
 }

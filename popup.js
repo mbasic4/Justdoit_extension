@@ -18,7 +18,10 @@ var todayCounter    = 0;
 var todayTask       = [];
 var overdue         = [];
 var todayCounterDOM = document.getElementById("todayCounter");
-var izmjeniText     = document.getElementById("izmjeniText");
+var izmijeniText    = document.getElementById("izmijeniText");
+var editDate		= document.getElementById("editDate");
+var editTime		= document.getElementById("editTime");
+var editCategory    = document.getElementById("editCategory");
 var idZaIzmjenu;
 var kategorijaZaIzmjenu;
 var currentTaskId;
@@ -99,7 +102,14 @@ function renderTask(taskData){
     edit.addEventListener("click", function(){
         idZaIzmjenu         = this.parentNode.id;
         kategorijaZaIzmjenu = this.parentNode.category;
-        izmjeniText.value   = this.parentNode.title;
+        izmijeniText.value  = this.parentNode.title;
+		document.getElementById("izmijeniText").value = taskData.title;
+		editDate.value		= this.parentNode.date;
+		document.getElementById("editDate").value = taskData.date;
+		editTime.value		= this.parentNode.time;
+		document.getElementById("editTime").value = taskData.time;
+		editCategory.value  = this.parentNode.category;
+		document.getElementById("editCategory").value = taskData.category;
         $('#editModal').modal('show');
     })
    
@@ -122,6 +132,15 @@ function renderTask(taskData){
 //jquerry datum dropdown
 $( function() {
     $("#inputDate").datepicker({
+        onClose: function(dateText,inst){
+           date = new Date(this.dateText);
+        },
+        dateFormat: 'dd/mm/yy'
+    });
+  } );
+
+$( function() {
+    $("#editDate").datepicker({
         onClose: function(dateText,inst){
            date = new Date(this.dateText);
         },
@@ -253,7 +272,7 @@ document.getElementById("todayRender").addEventListener("click", function(){
 });
 document.getElementById("addButton").addEventListener("click", function(){newTask();});
 document.getElementById("editButton").addEventListener("click", function(){
-	taskModificator(idZaIzmjenu,{title:izmjeniText.value});
+	taskModificator(idZaIzmjenu,{title:izmijeniText.value, date:editDate.value, time:editTime.value, category:editCategory.value});
 	renderTasks({category:kategorijaZaIzmjenu});
 	$('#editModal').modal('hide')});
 
@@ -303,3 +322,4 @@ function printAll(){
 $(document).ready(function() {
     load();
 });
+
